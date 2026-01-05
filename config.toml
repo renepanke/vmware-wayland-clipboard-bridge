@@ -1,0 +1,33 @@
+# VMware Wayland Clipboard Bridge Configuration
+# Place this at: ~/.config/vmware-wayland-clipboard-bridge/config.toml
+
+[timeouts]
+# Timeout for each clipboard read/write command (seconds)
+# Prevents hangs if clipboard tool becomes unresponsive
+command_timeout = 2
+
+# Maximum clipboard content size (bytes)
+# Anything larger is skipped with a warning
+# 50MB default - increase if you need to sync larger text
+max_clipboard_size = 52428800
+
+[sync]
+# How often to check for clipboard changes (milliseconds)
+# Lower = more responsive but higher CPU usage
+# Higher = less responsive but lower CPU usage
+# Typical: 300-1000ms
+interval_ms = 500
+
+# Enable detailed logging of sync operations
+enable_logging = true
+
+[logging]
+# Print verbose output
+verbose = true
+
+# Log file path (empty = stdout)
+# Use ~ for home directory
+# Examples:
+#   "~/.local/share/vmware-wayland-clipboard-bridge/sync.log"
+#   "/tmp/vmware-wayland-clipboard-bridge.log"
+log_file = "~/.local/share/vmware-wayland-clipboard-bridge/sync.log"
