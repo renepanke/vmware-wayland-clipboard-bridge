@@ -24,6 +24,8 @@ guest when `vmware-user` tools fail on Wayland.
 
 ### 1. Install Dependencies
 
+E.g. on Fedora:
+
 ```bash
 sudo dnf install golang wl-clipboard xclip open-vm-tools open-vm-tools-desktop
 ```
@@ -31,18 +33,8 @@ sudo dnf install golang wl-clipboard xclip open-vm-tools open-vm-tools-desktop
 ### 2. Prepare Directory
 
 ```bash
-mkdir -p ~/vmware-wayland-clipboard-bridge
-cd ~/vmware-wayland-clipboard-bridge
+git clone https://github.com/renepanke/vmware-wayland-clipboard-bridge.git
 ```
-
-Copy the following files into this directory:
-
-- `main.go`
-- `config.toml`
-- `vmware-wayland-clipboard-bridge.service`
-- `install.sh`
-- `uninstall.sh`
-- `go.mod` (optional, for dependency tracking)
 
 ### 3. Run Installer
 
