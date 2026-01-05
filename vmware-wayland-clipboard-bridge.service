@@ -1,0 +1,22 @@
+[Unit]
+Description=VMware Wayland Clipboard Bridge
+Documentation=https://github.com/renepanke/vmware-sway-sync
+After=graphical-session-pre.target
+PartOf=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=%h/.local/bin/vmware-wayland-clipboard-bridge
+Restart=on-failure
+RestartSec=5s
+
+# Security
+NoNewPrivileges=true
+PrivateTmp=true
+
+# Resource limits
+MemoryMax=100M
+CPUQuota=50%
+
+[Install]
+WantedBy=graphical-session.target
